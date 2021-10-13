@@ -1,0 +1,25 @@
+.header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    max-width: 1900px;
+    padding-top: 30px;
+    padding-right: 100px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    background-color: transparent;
+
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: right;
+}
+
+.header :not(:last-child) {
+    margin-right: 15px;
+}
+
+.headerLink {
+    text-decoration: none;
+    color: #ffffff;
+}

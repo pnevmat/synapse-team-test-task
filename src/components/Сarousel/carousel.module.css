@@ -1,0 +1,41 @@
+.carousel {
+    overflow: hidden;
+}
+
+.carouselLine {
+    position: relative;
+    display: flex;
+    width: 4800px;
+    height: 789px;
+    transition-duration: 1000ms;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+/* Стили картинки и текста */
+.item {
+    width: 1600px;
+    height: inherit;
+    padding-top: 300px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.itemContainer {
+    display: inline-block;
+    width: 100%;
+    max-width: 700px;
+    text-align: left;
+}
+
+.itemContainer :not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.itemTitle {
+    margin: 0;
+}
+
+.descriptionText {
+    margin-right: 3px;
+    font-weight: 500;
+}
