@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {Redirect} from 'react-router-dom';
 
 import validator from '../../utils/validator';
 
@@ -11,8 +10,6 @@ const LoginForm = ({onSubmit}) => {
 
     const [emailValidation, setEmailValidation] = useState(false);
     const [passwordValidation, setPasswordValidation] = useState(false);
-
-    const [formSubmited, setFormSubmited] = useState(false);
 
     const validationSchema = {
         capitalLetters: /([A-Z])/g,
@@ -50,7 +47,7 @@ const LoginForm = ({onSubmit}) => {
             console.log('Email phrase: ', emailChange);
             console.log('Password phrase: ', passwordChange);
 
-            setFormSubmited(true);
+            onSubmit({emailChange, passwordChange});
         };
     };
 
@@ -91,7 +88,6 @@ const LoginForm = ({onSubmit}) => {
                 <button className={styles.buttonSubmit}   type="submit">
                     Sign in
                 </button>
-                {formSubmited && <Redirect to="/" />}
             </form>
         </div>
     );
