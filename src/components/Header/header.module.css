@@ -23,4 +23,9 @@
 .headerLink {
     text-decoration: none;
     color: #ffffff;
+    cursor: pointer;
+}
+
+.welcomeMessage {
+    color: #ffffff;
 }

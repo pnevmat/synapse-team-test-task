@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import {Route, Redirect} from 'react-router-dom';
-import selectors from '../redux/selectors/authorisationSelectors';
+import selectors from '../redux/selectors/selectors';
 
 const PrivateRoute = ({
     component: Component,
@@ -9,12 +9,12 @@ const PrivateRoute = ({
     ...routeProps
 }) => {
 
-    const authorisation = useSelector(selectors.getIsAuthorisation);
+    const isAuth = useSelector(selectors.getIsAuthorised);
     
     return (
         <Route 
             {...routeProps}
-            render={props => authorisation ? <Component {...props} /> : <Redirect to={redirectTo} />}
+            render={props => isAuth ? <Component {...props} /> : <Redirect to={redirectTo} />}
         />
     );
 };

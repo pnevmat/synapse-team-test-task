@@ -13,8 +13,6 @@ const RegistrationForm = ({onSubmit}) => {
     const [nameValidation, setNameValidation] = useState(false);
     const [passwordValidation, setPasswordValidation] = useState(false);
 
-    
-
     const validationSchema = {
         capitalLetters: /([A-Z])/g,
         numbers: /([0-9])/g,

@@ -1,16 +1,16 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
-import authorisationSelectors from '../redux/selectors/authorisationSelectors';
+import selectors from '../redux/selectors/selectors';
 
 const PublicRoute = ({ component: Component, redirectTo, ...routeProps }) => {
-  const authorisation = useSelector(authorisationSelectors.getIsAuthorisation);
+  const isAuth = useSelector(selectors.getIsAuthorised);
 
   return (
     <Route
       {...routeProps}
       render={props =>
-        authorisation && routeProps.restricted ? (
+        isAuth && routeProps.restricted ? (
           <Redirect to={redirectTo} />
         ) : (
           <Component {...props} />

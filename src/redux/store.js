@@ -1,30 +1,29 @@
-import {configureStore, getDefaultMiddleware,} from '@reduxjs/toolkit';
+import {configureStore, getDefaultMiddleware, combineReducers} from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
   
 import registrationReducer from './redusers/registrationReducer';
 import authorisationReducer from './redusers/authorisationReducer';
+import regInterraptedReducer from './redusers/regInterraptedReducer';
   
 import logger from 'redux-logger';
   
   
-const userDataPersistConfig = {
-    key: 'userData',
-    storage,
-    whitelist: ['registrationData'],
+const rootReducerPersistConfig = {
+    key: 'rootReducer',
+    storage
 };
 
-const isAuthPersistConfig = {
-    key: 'isAuth',
-    storage,
-    whitelist: ['isAuth'],
-};
+const rootReducer = combineReducers({
+    registrationData: registrationReducer.registrationReducer,
+    isAuth: authorisationReducer.authorisationReducer,
+    isRegInterrapted: regInterraptedReducer.regInterraptedReducer,
+});
+
+const persistedReducer = persistReducer(rootReducerPersistConfig, rootReducer);
   
 const store = configureStore({
-    reducer: {
-        registrationData: persistReducer(userDataPersistConfig, registrationReducer.registrationReducer),
-        isAuth: persistReducer(isAuthPersistConfig, authorisationReducer.authorisationReducer),
-    },
+    reducer: persistedReducer,
     middleware: (getDefaultMiddleware) => [...getDefaultMiddleware({ serializableCheck: false }), logger],
     //   [...getDefaultMiddleware({ serializableCheck: false })],
     devTools: process.env.NODE_ENV === 'development'

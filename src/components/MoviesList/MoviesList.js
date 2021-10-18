@@ -1,19 +1,27 @@
 import React from 'react';
 
-const MoviesList = () => {
+import styles from './moviesList.module.css';
+
+const MoviesList = ({movies}) => {
     return (
-        <ul>
-            <li>
-                <div>
-                    sie 253/300 px
-                    <h3>Movie title</h3>
-                </div>
-                <div>
-                    <p>Movie Genre</p>
-                    <p>Movie Director</p>
-                    <p>Movie Year</p>
-                </div>
-            </li>
+        <ul className={styles.moviesList}>
+            {movies.map(movie => {
+                const backgroundImage = {
+                    backgroundImage: `url(${movie.poster})`
+                }
+                return (
+                    <li className={styles.movieCard} key={movie.id}>
+                        <div className={styles.moviePoster} style={backgroundImage}>
+                            <h3 className={styles.movieTitle}>{movie.title}</h3>
+                        </div>
+                        <div className={styles.descriptionContainer}>
+                            <p className={styles.descriptionText}>Genre: {movie.genre}</p>
+                            <p className={styles.descriptionText}>Director: {movie.director}</p>
+                            <p className={styles.descriptionText}>Release: {movie.year}</p>
+                        </div>
+                    </li>
+                )
+            })}
         </ul>
     );
 };
