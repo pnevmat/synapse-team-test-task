@@ -6,8 +6,6 @@ import styles from './carousel.module.css'
 
 const Carousel = () => {
 
-    // const [offset, setOffset] = useState(0);
-
     const carouselLineRef = useRef(null);
 
     let offset = 0;

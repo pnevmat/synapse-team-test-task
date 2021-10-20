@@ -12,8 +12,9 @@ import styles from './registrationPage.module.css';
 
 const RegistrationPage = () => {
     const dispatch = useDispatch();
-    const [formSubmited, setFormSubmited] = useState(false);
-
+    // const [formSubmited, setFormSubmited] = useState(false);
+    let formSubmited = false;
+    
     useEffect(() => {
 
         return () => {
@@ -27,7 +28,7 @@ const RegistrationPage = () => {
 
         dispatch(registrationOperation(registrationData));
 
-        setFormSubmited(true);
+        formSubmited = true;
     };
 
     return (

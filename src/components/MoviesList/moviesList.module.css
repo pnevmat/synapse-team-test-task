@@ -24,21 +24,54 @@
 }
 
 .moviePoster {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
     height: 350px;
     padding-top: 10px;
     padding-left: 10px;
     margin-bottom: 10px;
+    padding-right: 10px;
     background-repeat: no-repeat;
     background-size: contain;
     text-align: left;
 }
 
 .movieTitle {
+    display: inline-block;
     margin: 0;
     font-size: 15px;
     font-weight: 500;
     line-height: 1.5;
     color: #ffffff;
+}
+
+.infoPopup {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+
+    width: 100%;
+    max-width: 250px;
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 5px;
+
+    background-color: #ffffff;
+    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.infoPopup :not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.infoText {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
 }
 
 .descriptionContainer {
@@ -50,4 +83,16 @@
     margin-top: 0;
     margin-bottom: 5px;
     color: #ffffff;
+}
+
+/* .infoIcon {
+    fill: #ffffff;
+} */
+
+.downthumbIcon {
+    margin-right: 10px;
+}
+
+.infoIcon:hover ~ .infoPopup {
+    opacity: 1;
 }

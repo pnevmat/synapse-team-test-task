@@ -4,7 +4,7 @@ import registrationAction from '../actions/registrationAction';
 import authorisationAction from '../actions/authorisationAction';
 import logoutAction from '../actions/logoutAction';
 
-const authorisationInitialState = {};
+const authorisationInitialState = false;
 
 const authorisationReducer = createReducer(authorisationInitialState, {
     [registrationAction.registrationSuccess]: () => true,

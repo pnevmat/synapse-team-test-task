@@ -10,7 +10,7 @@ const MoviesPage = () => {
     return (
         <>
             <Header />
-            <MoviesList movies={imdbMovies} />
+            <MoviesList imdbMovies={imdbMovies} />
         </>
     );
 };

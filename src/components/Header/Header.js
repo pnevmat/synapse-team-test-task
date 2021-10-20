@@ -8,13 +8,14 @@ import selectors from '../../redux/selectors/selectors';
 
 import styles from './header.module.css';
 
-const Header = ({regInterrapted}) => {
+const Header = () => {
     const dispatch = useDispatch();
 
     const onLgout = () => {
         dispatch(logoutOperation());
     };
 
+    const regInterrapted = useSelector(selectors.getisRegInterrapted);
     const isAuthrised = useSelector(selectors.getIsAuthorised);
     const userData = useSelector(selectors.getRegistrationData);
 

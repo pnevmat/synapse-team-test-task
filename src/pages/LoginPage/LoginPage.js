@@ -15,12 +15,12 @@ const LoginPage = () => {
     const [formSubmited, setFormSubmited] = useState(false);
 
     const userData = useSelector(selectors.getRegistrationData);
+    console.log('User data: ', userData);
 
     const handleSubmit = (loginData) => {
-
-        delete userData.nameChange;
+        const {emailChange, passwordChange} = userData;
         
-        if (toString(userData) === toString(loginData)) {
+        if (emailChange === loginData.emailChange && passwordChange === loginData.passwordChange) {
 
             dispatch(authorisationOperation());
 
