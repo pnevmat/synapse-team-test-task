@@ -3,6 +3,7 @@ import {Redirect} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import authorisationOperation from '../../redux/operations/authorisationOperation';
+
 import selectors from '../../redux/selectors/selectors';
 
 import Header from '../../components/Header/Header';
@@ -15,7 +16,6 @@ const LoginPage = () => {
     const [formSubmited, setFormSubmited] = useState(false);
 
     const userData = useSelector(selectors.getRegistrationData);
-    console.log('User data: ', userData);
 
     const handleSubmit = (loginData) => {
         const {emailChange, passwordChange} = userData;

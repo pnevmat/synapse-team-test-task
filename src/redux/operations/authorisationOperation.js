@@ -1,6 +1,6 @@
 import authorisationAction from '../actions/authorisationAction';
 
-const authorisationOperation = userData => async dispatch => {
+const authorisationOperation = () => async dispatch => {
     dispatch(authorisationAction.authorisationRequest());
 
     try {

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {Redirect} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 
@@ -12,7 +12,6 @@ import styles from './registrationPage.module.css';
 
 const RegistrationPage = () => {
     const dispatch = useDispatch();
-    // const [formSubmited, setFormSubmited] = useState(false);
     let formSubmited = false;
     
     useEffect(() => {

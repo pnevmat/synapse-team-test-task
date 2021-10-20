@@ -29,12 +29,10 @@ const LoginForm = ({onSubmit}) => {
             case 'email':
                 setEmailChange(value);
                 setEmailValidation(validator(emailChange, validationSchema, errors));
-                console.log('emailValidation before check: ', emailValidation);
                 break;
             case 'password':
                 setPasswordChange(value);
                 setPasswordValidation(validator(passwordChange, validationSchema, errors));
-                console.log('passwordValidation before check: ', passwordValidation);
                 break;
             default:
                 break;
@@ -44,8 +42,6 @@ const LoginForm = ({onSubmit}) => {
     const handleSubmit = () => {
 
         if (!emailValidation && !passwordValidation) {
-            console.log('Email phrase: ', emailChange);
-            console.log('Password phrase: ', passwordChange);
 
             onSubmit({emailChange, passwordChange});
         };

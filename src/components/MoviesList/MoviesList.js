@@ -10,8 +10,6 @@ const MoviesList = ({imdbMovies}) => {
     const [moviesPerPage, setMoviesPerPage] = useState(20);
 
     const movies = imdbMovies.filter((movie, index) => index <= moviesPerPage - 1 && movie);
-    console.log('icon svg: ', InfoOutlinedIcon);
-    // console.log('Movies per page: ', movies);
 
     const handleScroll = () => {
         setMoviesPerPage(moviesPerPage + 20);
@@ -23,6 +21,7 @@ const MoviesList = ({imdbMovies}) => {
             return e.pageY >= e.target.scrollHeight - 300 && moviesPerPage <= imdbMovies.length && handleScroll()
             }}>
             {movies.map(movie => {
+                
                 const backgroundImage = {
                     backgroundImage: `url(${movie.poster})`
                 }
@@ -31,7 +30,6 @@ const MoviesList = ({imdbMovies}) => {
                     fill: '#ffffff'
                 }
 
-                console.log('Movie imdb rating: ', Number(movie.imdbrating));
                 return (
                     <li className={styles.movieCard} key={movie.id}>
                         <div className={styles.moviePoster} style={backgroundImage}>

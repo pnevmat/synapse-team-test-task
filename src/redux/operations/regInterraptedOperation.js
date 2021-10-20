@@ -1,6 +1,6 @@
 import regInterraptedAction from '../actions/regInterraptedAction';
 
-const registerOperation = userData => async dispatch => {
+const registerOperation = () => async dispatch => {
     dispatch(regInterraptedAction.regInterraptedRequest());
 
     try {

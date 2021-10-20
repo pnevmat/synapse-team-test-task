@@ -1,6 +1,6 @@
 import logoutAction from '../actions/logoutAction';
 
-const logoutOperation = userData => async dispatch => {
+const logoutOperation = () => async dispatch => {
     dispatch(logoutAction.logoutRequest());
 
     try {

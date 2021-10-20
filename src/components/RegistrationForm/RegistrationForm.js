@@ -31,17 +31,14 @@ const RegistrationForm = ({onSubmit}) => {
             case 'email':
                 setEmailChange(value);
                 setEmailValidation(validator(emailChange, validationSchema, errors));
-                console.log('emailValidation before check: ', emailValidation);
                 break;
             case 'name':
                 setNameChange(value);
                 setNameValidation(validator(nameChange, validationSchema, errors));
-                console.log('nameValidation before check: ', nameValidation);
                 break;
             case 'password':
                 setPasswordChange(value);
                 setPasswordValidation(validator(passwordChange, validationSchema, errors));
-                console.log('passwordValidation before check: ', passwordValidation);
                 break;
             default:
                 break;
@@ -51,9 +48,6 @@ const RegistrationForm = ({onSubmit}) => {
     const handleSubmit = () => {
 
         if (!emailValidation && !nameValidation && !passwordValidation) {
-            console.log('Email phrase: ', emailChange);
-            console.log('Name phrase: ', nameChange);
-            console.log('Password phrase: ', passwordChange);
 
             onSubmit({emailChange, nameChange, passwordChange});
         };

@@ -11,19 +11,18 @@ const Carousel = () => {
     let offset = 0;
 
     const handleSwip = (e) => {
-        console.log('Delta Y: ', e.deltaY);
+        
         if (e.deltaY > 0 && offset < (1600 * 2)) {
             offset += 1600;
-            console.log('Offset increase');
+            
         } else if (e.deltaY < 0 && offset > 0) {
             offset -= 1600;
-            console.log('Offset decrease');
+            
         } else if (e.deltaY > 0 && offset >= (1600 * 2)) {
             offset = 0;
-            console.log('Offset over last ing');
+            
         } else if (e.deltaY < 0 && offset === 0) {
             offset = 1600 * 2;
-            console.log('Offset before first img');
         }
 
         carouselLineRef.current.style.right = `${offset + 'px'}`;
@@ -32,8 +31,6 @@ const Carousel = () => {
     const carouselLineStyle = {
         right: `${offset}`
     }
-
-    console.log('Offset before return in component: ', offset);
 
     return (
         <div className={styles.carousel}>
