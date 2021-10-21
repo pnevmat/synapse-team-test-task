@@ -35,13 +35,13 @@ const Carousel = () => {
     return (
         <div className={styles.carousel}>
             <ul ref={carouselLineRef} className={styles.carouselLine} style={carouselLineStyle}>
-                {carouselText.map(item => {
+                {carouselText.map((item, index) => {
                     const style = {
                         backgroundImage: `url(${item.poster})`
                     }
 
                     return (
-                        <li key={item.id} className={styles.item} style={style} onWheel={e => handleSwip(e)}>
+                        <li key={item.id} className={index > 0 ? styles.item : styles.firstItem} style={style} onWheel={e => handleSwip(e)}>
                             <div className={styles.itemContainer}>
                                 <h2 className={styles.itemTitle}>{item.title}</h2>
                                 <div>

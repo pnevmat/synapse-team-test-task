@@ -4,8 +4,6 @@
 }
 
 .carouselLine {
-    position: relative;
-    display: flex;
     width: calc(100vw * 3);
     height: 100vh;
     transition-duration: 1000ms;
@@ -13,7 +11,8 @@
 }
 
 /* Стили картинки и текста */
-.item {
+.item,
+.firstItem {
     width: 100vw;
     background-size: cover;
     text-align: center;
@@ -36,7 +35,8 @@
 }
 
 @media (max-width: 767px) {
-    .item {
+    .item,
+    .firstItem {
         padding-top: 50px;
     }
 
@@ -63,14 +63,31 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (max-width: 1279px) {
     .item {
+        display: none;
+    }
+
+    .firstItem {
+        height: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+    .item,
+    .firstItem {
         padding-top: 150px;
     }
 }
 
 @media (min-width: 1280px) {
-    .item {
+    .item,
+    .firstItem {
         padding-top: 300px;
+    }
+
+    .carouselLine {
+        position: relative;
+        display: flex;
     }
 }
