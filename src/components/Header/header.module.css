@@ -1,23 +1,6 @@
 .header {
-    position: fixed;
-    z-index: 1;
     width: 100%;
-    max-width: 1900px;
-    padding-top: 30px;
-    padding-right: 100px;
-    padding-bottom: 30px;
-    padding-left: 30px;
     border-bottom: 1px solid #ffffff66;
-    background-color: transparent;
-
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.5;
-    text-align: right;
-}
-
-.header :not(:last-child) {
-    margin-right: 15px;
 }
 
 .headerLink {
@@ -28,4 +11,79 @@
 
 .welcomeMessage {
     color: #ffffff;
+}
+
+@media (max-width: 300px) {
+    .header {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1;
+    }
+}
+
+@media (min-width: 301px) and (max-width: 767px) {
+    .header {
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 450px) {
+    .header {
+        text-align: center;
+    }
+
+    .welcomeMessage {
+        display: block;
+        margin-top: 5px;
+    }
+}
+
+@media (min-width: 451px) and (max-width: 767px) {
+    .header {
+       text-align: right;
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+    }
+
+    .header :not(:last-child) {
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        padding-top: 30px;
+        padding-right: 100px;
+        padding-bottom: 30px;
+        padding-left: 30px;
+        text-align: right;
+    }
+
+    .header :not(:last-child) {
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 1279px) {
+    .header {
+        background-color: #000000;
+    }
+}
+
+@media (min-width: 1280px) {
+    .header {
+        position: fixed;
+        z-index: 1;
+        max-width: 1900px;
+        background-color: transparent;
+    }
 }

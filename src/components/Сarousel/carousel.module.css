@@ -1,21 +1,21 @@
 .carousel {
+    width: 100%;
     overflow: hidden;
 }
 
 .carouselLine {
     position: relative;
     display: flex;
-    width: 4800px;
-    height: 789px;
+    width: calc(100vw * 3);
+    height: 100vh;
     transition-duration: 1000ms;
     transform: translate3d(0px, 0px, 0px);
 }
 
 /* Стили картинки и текста */
 .item {
-    width: 1600px;
-    height: inherit;
-    padding-top: 300px;
+    width: 100vw;
+    background-size: cover;
     text-align: center;
     color: #ffffff;
 }
@@ -23,7 +23,6 @@
 .itemContainer {
     display: inline-block;
     width: 100%;
-    max-width: 700px;
     text-align: left;
 }
 
@@ -31,11 +30,47 @@
     margin-bottom: 5px;
 }
 
-.itemTitle {
-    margin: 0;
-}
-
 .descriptionText {
     margin-right: 3px;
     font-weight: 500;
+}
+
+@media (max-width: 767px) {
+    .item {
+        padding-top: 50px;
+    }
+
+    .itemContainer {
+        max-width: 230px;
+    }
+
+    .itemContainer > .itemTitle {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .itemContainer {
+        display: inline-block;
+        width: 100%;
+        max-width: 700px;
+        text-align: left;
+    }
+
+    .itemTitle {
+        margin: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+    .item {
+        padding-top: 150px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .item {
+        padding-top: 300px;
+    }
 }

@@ -1,13 +1,6 @@
 .moviesList {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
     width: 100%;
-    padding-top: 110px;
-    padding-right: 250px;
     padding-bottom: 50px;
-    padding-left: 250px;
     background-color: #000000;
 }
 
@@ -17,8 +10,6 @@
 
 .movieCard {
     width: 100%;
-    max-width: 500px;
-    max-height: 700px;
     border: 2px solid #ffffff;
     margin-bottom: 20px;
 }
@@ -27,13 +18,11 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    height: 350px;
     padding-top: 10px;
     padding-left: 10px;
     margin-bottom: 10px;
     padding-right: 10px;
     background-repeat: no-repeat;
-    background-size: contain;
     text-align: left;
 }
 
@@ -48,8 +37,6 @@
 
 .infoPopup {
     position: absolute;
-    top: 10%;
-    left: 50%;
 
     width: 100%;
     max-width: 250px;
@@ -85,14 +72,131 @@
     color: #ffffff;
 }
 
-/* .infoIcon {
-    fill: #ffffff;
-} */
-
 .downthumbIcon {
     margin-right: 10px;
 }
 
 .infoIcon:hover ~ .infoPopup {
     opacity: 1;
+}
+
+@media (max-width: 519px) {
+    .moviesList {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+@media (min-width: 520px) and (max-width: 767px) {
+    .moviesList {
+        padding-right: 135px;
+        padding-left: 135px;
+    }
+}
+
+@media (max-width: 767px) {
+    .moviesList {
+        text-align: center;
+    }
+
+    .movieCard {
+        display: inline-block;
+        max-width: 250px;
+        max-height: 350px;
+    }
+
+    .moviePoster {
+        height: 200px;
+        background-size: cover;
+    }
+
+    .infoPopup {
+        top: 17%;
+        left: 0;
+    }
+}
+
+
+@media (max-width: 1279px) {
+    .moviesList {
+        padding-top: 50px;
+    }
+}
+
+@media (min-width: 768px) {
+    .movieCard {
+        max-width: 500px;
+        max-height: 700px;
+    }
+
+    .moviePoster {
+        height: 350px;
+    }
+
+    .infoPopup {
+        top: 10%;
+        left: 50%;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1019px) {
+    .moviesList {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+@media (min-width: 1020px) and (max-width: 1279px) {
+    .moviesList {
+        padding-right: 150px;
+        padding-left: 150px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+    .moviesList {
+        text-align: center;
+    }
+
+    .movieCard {
+        display: inline-block;
+    }
+
+    .moviePoster {
+        background-size: cover;
+    }
+}
+
+@media (min-width: 1280px) {
+    .moviesList {
+        padding-top: 110px;
+    }
+
+    .moviePoster {
+        background-size: contain;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1519px) {
+    .moviesList {
+        padding-right: 260px;
+        padding-left: 260px;
+        text-align: center;
+    }
+
+    .movieCard {
+        display: inline-block;
+    }
+}
+
+@media (min-width: 1520px) {
+    .moviesList {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding-right: 250px;
+        padding-left: 250px;
+    }
 }

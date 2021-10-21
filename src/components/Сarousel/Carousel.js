@@ -37,8 +37,6 @@ const Carousel = () => {
             <ul ref={carouselLineRef} className={styles.carouselLine} style={carouselLineStyle}>
                 {carouselText.map(item => {
                     const style = {
-                        backgroundRepeate: 'no-repeate',
-                        backgroundSize: 'cover',
                         backgroundImage: `url(${item.poster})`
                     }
 
