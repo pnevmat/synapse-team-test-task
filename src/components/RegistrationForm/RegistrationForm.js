@@ -9,8 +9,7 @@ const RegistrationForm = ({onSubmit}) => {
     const [nameChange, setNameChange] = useState('');
     const [passwordChange, setPasswordChange] = useState('');
 
-    const [emailValidation, setEmailValidation] = useState(false);
-    const [nameValidation, setNameValidation] = useState(false);
+    // const [emailValidation, setEmailValidation] = useState(false);
     const [passwordValidation, setPasswordValidation] = useState(false);
 
     const validationSchema = {
@@ -30,11 +29,10 @@ const RegistrationForm = ({onSubmit}) => {
         switch (name) {
             case 'email':
                 setEmailChange(value);
-                setEmailValidation(validator(emailChange, validationSchema, errors));
+                // setEmailValidation(validator(emailChange, validationSchema, errors));
                 break;
             case 'name':
                 setNameChange(value);
-                setNameValidation(validator(nameChange, validationSchema, errors));
                 break;
             case 'password':
                 setPasswordChange(value);
@@ -47,7 +45,7 @@ const RegistrationForm = ({onSubmit}) => {
 
     const handleSubmit = () => {
 
-        if (!emailValidation && !nameValidation && !passwordValidation) {
+        if (emailChange !== '' && nameChange !== '' && passwordChange !== '') {
 
             onSubmit({emailChange, nameChange, passwordChange});
         };
@@ -73,7 +71,7 @@ const RegistrationForm = ({onSubmit}) => {
                             handleChange(e);
                         }}
                     />
-                    {emailValidation && <p className={styles.errorMessage}>{emailValidation}</p>}
+                    {/* {emailValidation && <p className={styles.errorMessage}>{emailValidation}</p>} */}
                 </label>
                 <label>
                     <input
@@ -85,7 +83,6 @@ const RegistrationForm = ({onSubmit}) => {
                             handleChange(e);
                         }}
                     />
-                    {nameValidation && <p className={styles.errorMessage}>{nameValidation}</p>}
                 </label>
                 <label className={styles.inputLabel}>
                     <input

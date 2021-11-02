@@ -28,7 +28,7 @@ const LoginForm = ({onSubmit}) => {
         switch (name) {
             case 'email':
                 setEmailChange(value);
-                setEmailValidation(validator(emailChange, validationSchema, errors));
+                // setEmailValidation(validator(emailChange, validationSchema, errors));
                 break;
             case 'password':
                 setPasswordChange(value);
@@ -41,7 +41,7 @@ const LoginForm = ({onSubmit}) => {
 
     const handleSubmit = () => {
 
-        if (!emailValidation && !passwordValidation) {
+        if (emailChange !== '' && passwordChange !== '') {
 
             onSubmit({emailChange, passwordChange});
         };

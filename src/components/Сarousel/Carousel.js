@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useEffect} from 'react';
 
 import carouselText from '../../utils/constants';
 
@@ -6,26 +6,43 @@ import styles from './carousel.module.css'
 
 const Carousel = () => {
 
+    useEffect(() => {
+        
+        return () => {
+            clearInterval(intervalId)
+        }
+    });
+    
     const carouselLineRef = useRef(null);
 
+    const viewPortWidth = window.innerWidth;
     let offset = 0;
+    let eventCount = 0;
 
+    const intervalId = setInterval(() => {
+        eventCount = 0;
+    }, 3000);
+    
     const handleSwip = (e) => {
+        if (eventCount > 0) {
+            return;
+        };
         
-        if (e.deltaY > 0 && offset < (1600 * 2)) {
-            offset += 1600;
+        if (e.deltaY > 0 && offset < (viewPortWidth * 2)) {
+            offset += viewPortWidth;
             
         } else if (e.deltaY < 0 && offset > 0) {
-            offset -= 1600;
+            offset -= viewPortWidth;
             
-        } else if (e.deltaY > 0 && offset >= (1600 * 2)) {
+        } else if (e.deltaY > 0 && offset >= (viewPortWidth * 2)) {
             offset = 0;
             
         } else if (e.deltaY < 0 && offset === 0) {
-            offset = 1600 * 2;
+            offset = viewPortWidth * 2;
         }
 
         carouselLineRef.current.style.right = `${offset + 'px'}`;
+        eventCount += 1;
     };
 
     const carouselLineStyle = {
